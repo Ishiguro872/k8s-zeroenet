@@ -1,0 +1,51 @@
+# ============================================================
+# 🛡️ Helm / Kubernetes Secrets and Local Overrides
+# ============================================================
+
+# Ignore all environment or secret manifests
+**/*-secrets.yaml
+**/-secret.yaml
+**/*secret*.yaml
+# But keep sample/example templates
+!**/sample-*.yaml
+!**/example-*.yaml
+
+# Ignore Helm values with real or local overrides
+**/values.yaml
+**/values.*.yaml
+# Keep safe shared templates
+!**/sample-values.yaml
+!**/example-values.yaml
+
+# Ignore Certificate Requests
+**/*-certificate.yaml
+# Keep sample/example templates
+
+!**/sample-*.yaml
+
+# Optional: if you have local override conventions
+**/metallb-config.yaml
+*.local.yaml
+*.dev.yaml
+*.override.yaml
+
+# ============================================================
+# 🪣 Helm build outputs and chart packages
+# ============================================================
+charts/
+*.tgz
+
+# ============================================================
+# 🧱 Kubernetes tooling artifacts
+# ============================================================
+.kube/
+tmp/
+logs/
+
+# ============================================================
+# 💻 IDE & OS files
+# ============================================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,311 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage
+  namespace: homepage
+  labels:
+    app.kubernetes.io/name: homepage
+data:
+  kubernetes.yaml: |
+    mode: cluster
+#  settings.yaml: ""
+  settings.yaml: |
+    title: The ZeroeNet
+    theme: dark
+    color: slate
+    background:
+      image:  https://images.unsplash.com/photo-1722542251482-c08511075bab?q=80&w=5142&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+      brightness: 60 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+      opacity: 30 # 0-100
+  
+    useEqualHeights: true
+
+    layout:
+      Hypervisor:
+        header: true
+        style: row
+        columns: 1
+      Shalamayne:
+        header: true
+        style: row
+        columns: 3
+      Network:
+        header: true
+        style: row
+        columns: 1
+      DNS:
+        header: true
+        style: row
+        columns: 1
+      Monitors:
+        header: true
+        style: row
+        columns: 2
+      Storage:
+        header: true
+        style: row
+        columns: 1
+      Media:
+        header: true
+        style: row
+        columns: 3
+      Runners:
+        header: true
+        style: row
+        columns: 3
+      Bookmarks:
+        header: true
+        style: row
+        columns: 3  
+
+  custom.css: ""
+  custom.js: ""
+  bookmarks.yaml: |
+    - Developer & Infrastructure:
+        - The Box:
+          - icon: synology.svg
+            href: https://thebox.zeroenet.cloud
+        - Nessus:
+          - abbr: NSS
+            href: https://nessus.zeroenet.cloud
+        - Splunk:
+          - icon: splunk.svg
+            href: https://splunk.zeroenet.cloud
+        - AbuseIPDB:
+          - abbr: ADB
+            href: https://abuseipdb.com
+        - n8n:
+          - icon: n8n.svg
+            href: https://automate.zeroenet.cloud
+        - Github:
+          - icon: github.svg
+            href: https://github.com/dashboard
+        - Amazon Web Services:
+          - icon: aws.svg
+            href: https://aws.amazon.com
+        - Proxmox Helper Scripts:
+          - icon: helper-scripts.png
+            href: https://community-scripts.github.io/ProxmoxVE/
+        - NordVPN:
+          - icon: nordvpn.svg
+            href: https://nordvpn.com
+        - Cloudflare:
+          - icon: cloudflare.svg
+            href: https://cloudflare.com
+    - Services:
+        - Wiki:
+          - icon: wikijs.svg
+            href: https://wiki.zeroenet.cloud
+        - Karakeep:
+          - icon: karakeep.svg
+            href: https://karakeep.zeroenet.cloud
+        - Tandoor:
+          - icon: tandoor-recipes.svg
+            href: https://recipes.zeroenet.cloud
+        - Actual:
+          - icon: actual-budget.svg
+            href: https://budget.zeroenet.cloud
+        - ErsatzTV:
+          - icon: ersatztv.png
+            href: https://iptv.zeroenet.cloud
+    - Shopping & Entertainment:
+        - YouTube:
+          - icon: youtube.svg
+            href: https://youtube.com/
+        - Youtube Music:
+          - icon: youtube-music.svg
+            href: https://music.youtube.com
+        - Amazon:
+          - icon: amazon.svg
+            href: https://amazon.com    
+  services.yaml: |
+    - Hypervisor:
+        - Frostmourne::
+            icon: proxmox.svg
+            href: "{{HOMEPAGE_VAR_FROSTMOURNE_URL}}"
+            description: Proxmox-UniqueSSL
+            widget:
+                type: proxmox
+                url: "{{HOMEPAGE_VAR_FROSTMOURNE_URL}}"
+                username: "{{HOMEPAGE_VAR_FROSTMOURNE_USER}}"
+                password: "{{HOMEPAGE_VAR_FROSTMOURNE_APIKEY}}"
+    - Shalamayne:
+        - CPU Usage:
+            widget:
+                type: glances
+                url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+                username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+                password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+                version: 4 # required only if running glances v4 or higher, defaults to 3
+                metric: cpu
+                refreshInterval: 5000 # optional - in milliseconds, defaults to 1000 or more, depending on the metric
+                pointsLimit: 15 # optional, defaults to 15
+                chart: false
+        - GPU Usage:
+            widget:
+                type: glances
+                url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+                username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+                password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+                version: 4
+                metric: gpu:nvidia0        
+        - Memory Usage:
+            widget:
+                type: glances
+                url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+                username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+                password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+                version: 4 # required only if running glances v4 or higher, defaults to 3
+                metric: memory
+                chart: false
+        -  Network Usage:
+            widget:
+                type: glances
+                url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+                username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+                password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+                version: 4 # required only if running glances v4 or higher, defaults to 3
+                metric: network:enp5s0
+                chart: false
+        - Top Processes:
+            widget:
+                type: glances
+                url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+                username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+                password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+                version: 4 # required only if running glances v4 or higher, defaults to 3
+                metric: process
+        - Disk I/O:
+            widget:
+                type: glances
+                url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+                username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+                password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+                version: 4 # required only if running glances v4 or higher, defaults to 3
+                metric: disk:nvme0n1
+                chart: false
+    - Network:
+        - UniFi:
+            icon: unifi.svg
+            href: https://malfurion.zeroenet.cloud
+            description: network-WildcardSSL
+            widget:
+                type: unifi
+                url: https://10.28.28.1
+                username:  "{{HOMEPAGE_VAR_UNIFI_USER}}"
+                password:  "{{HOMEPAGE_VAR_UNIFI_APIKEY}}"
+    - DNS:
+        - PiHole:
+            icon: pi-hole.svg
+            href: "{{HOMEPAGE_VAR_PIHOLE_URL_ADMIN}}"
+            description: DNS 
+            widget:
+                type: pihole
+                url: "{{HOMEPAGE_VAR_PIHOLE_URL}}"
+                version: 6 # required if running v6 or higher, defaults to 5
+                key: "{{HOMEPAGE_VAR_PIHOLE_APIKEY}}" # optional, in v6 can be your password or app password
+    - Monitors:
+        - Status:
+            icon: uptime-kuma.svg
+            href: https://status.zeroenet.cloud
+            description: Primary Uptime Monitor
+            widget:
+                type: uptimekuma
+                url: https://status.zeroenet.cloud
+                slug: uptime-zeroenet
+        - Overwatch:
+            icon: uptime-kuma.svg
+            href: https://overwatch.zeroenet.cloud
+            description: Backup Uptime Monitor
+            widget:
+                type: uptimekuma
+                url: https://overwatch.zeroenet.cloud
+                slug: overwatch-zeroenet
+    - Media:
+        - Home-Plex:
+            icon: plex.svg
+            href: "{{HOMEPAGE_VAR_PLEX_URL}}"
+            description: Plex
+            widget:
+                type: plex
+                url: "{{HOMEPAGE_VAR_PLEX_URL}}"
+                key: "{{HOMEPAGE_VAR_PLEX_APIKEY}}"
+        - Overseerr:
+            icon: overseerr.svg
+            href: "{{HOMEPAGE_VAR_OVERSEERR_INTERNAL_URL}}"
+            description: Requests-CF
+            widget:
+                type: overseerr
+                url: "{{HOMEPAGE_VAR_OVERSEERR_LOCAL_URL}}"
+                key: "{{HOMEPAGE_VAR_OVERSEERR_APIKEY}}"
+        - qBittorrent:
+            icon: qbittorrent.svg
+            href: https://mailman.zeroenet.cloud
+            description: Mailman-RP
+            widget:
+                type: qbittorrent
+                url: https://mailman.zeroenet.cloud
+                username: "{{HOMEPAGE_VAR_QBIT_USER}}"
+                password: "{{HOMEPAGE_VAR_QBIT_APIKEY}}"
+        - Prowlarr:
+            icon: prowlarr.svg
+            href: https://prowlarr.zeroenet.cloud
+            description: Indexer-RP
+            widget:
+                type: prowlarr
+                url: https://prowlarr.zeroenet.cloud
+                key: "{{HOMEPAGE_VAR_PRWLR_APIKEY}}"
+
+        - Radarr:
+            icon: radarr.svg
+            href: https://radarr.zeroenet.cloud
+            description: Movies-RP
+            widget:
+                type: radarr
+                url: https://radarr.zeroenet.cloud
+                key: "{{HOMEPAGE_VAR_RDR_APIKEY}}"
+        - Sonarr:
+            icon: sonarr.svg
+            href: https://sonarr.zeroenet.cloud
+            description: TV Shows-RP
+            widget:
+                type: sonarr
+                url: https://sonarr.zeroenet.cloud
+                key: "{{HOMEPAGE_VAR_SNR_APIKEY}}"            
+  widgets.yaml: |
+    - kubernetes:
+        cluster:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+          label: "cluster"
+        nodes:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+    - resources:
+        backend: resources
+        expanded: true
+        network: default
+    - search:
+        provider: google
+        target: _blank
+    - datetime:
+        text_size: xl
+        format:
+          timeStyle: short
+          hourCycle: h23
+          dateStyle: long
+    - openmeteo:
+        label: "{{HOMEPAGE_VAR_LOCATION}}" # optional
+        latitude: {{HOMEPAGE_VAR_LAT}}
+        longitude: {{HOMEPAGE_VAR_LON}}
+        timezone: "{{HOMEPAGE_VAR_TIMEZ}}" # optional
+        units: imperial # or imperial
+        cache: 5 # Time in minutes to cache API responses, to stay within limits
+        format: # optional, Intl.NumberFormat options
+          maximumFractionDigits: 1
+  docker.yaml: ""
