@@ -3,6 +3,8 @@
 # ============================================================
 
 # Ignore all environment or secret manifests
+**/.env
+**/.secrets
 **/*-secrets.yaml
 **/-secret.yaml
 **/*secret*.yaml

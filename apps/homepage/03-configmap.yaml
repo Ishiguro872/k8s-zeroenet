@@ -41,7 +41,7 @@ data:
       Monitors:
         header: true
         style: row
-        columns: 2
+        columns: 3
       Storage:
         header: true
         style: row
@@ -99,7 +99,10 @@ data:
             href: https://wiki.zeroenet.cloud
         - Karakeep:
           - icon: karakeep.svg
-            href: https://karakeep.zeroenet.cloud
+            href: https://bookmarks.zeroenet.cloud
+        - LubeLogger:
+          - icon: lubelogger.png
+            href: https://lubelogger.zeroenet.cloud
         - Tandoor:
           - icon: tandoor-recipes.svg
             href: https://recipes.zeroenet.cloud
@@ -195,6 +198,16 @@ data:
                 url: https://10.28.28.1
                 username:  "{{HOMEPAGE_VAR_UNIFI_USER}}"
                 password:  "{{HOMEPAGE_VAR_UNIFI_APIKEY}}"
+        - Nginx Proxy Manager:
+            icon: nginx-proxy-manager.svg
+            href: https://proxy.zeroenet.cloud
+            description: internal proxy-RP
+            widget:
+                type: npm
+                url: https://proxy.zeroenet.cloud
+                username: "{{HOMEPAGE_VAR_NGINXPM_USER}}"
+                password: "{{HOMEPAGE_VAR_NGINXPM_APIKEY}}"    
+
     - DNS:
         - PiHole:
             icon: pi-hole.svg
@@ -205,6 +218,16 @@ data:
                 url: "{{HOMEPAGE_VAR_PIHOLE_URL}}"
                 version: 6 # required if running v6 or higher, defaults to 5
                 key: "{{HOMEPAGE_VAR_PIHOLE_APIKEY}}" # optional, in v6 can be your password or app password
+        - Backup-PiHole:
+            icon: pi-hole.svg
+            href: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL_ADMIN}}"
+            description: Backup DNS
+            widget:
+                type: pihole
+                url:  "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL}}"
+                version: 6
+                key: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_APIKEY}}"
+
     - Monitors:
         - Status:
             icon: uptime-kuma.svg
@@ -222,6 +245,36 @@ data:
                 type: uptimekuma
                 url: https://overwatch.zeroenet.cloud
                 slug: overwatch-zeroenet
+        - PeaNUT:
+            icon: peanut.svg
+            href: https://peanut.zeroenet.cloud
+            description: UPS monitor
+            widget:
+                type: customapi
+                url: https://peanut.zeroenet.cloud/api/v1/devices/ups
+                mappings:
+                  - field: battery.charge
+                    label: Battery Charge
+                    format: percent
+                  - field: battery.runtime
+                    label: Battery Runtime
+                    format: duration
+                  - field: ups.load
+                    label: UPS Load
+                    format: percent
+                  - field: ups.status
+                    label: UPS Status
+                    format: text
+                    remap:
+                      - value: OL
+                        to: Online
+                      - value: OB
+                        to: On Battery
+                      - value: LB
+                        to: Low Battery
+                      - any: true
+                        to: Unknown
+
     - Media:
         - Home-Plex:
             icon: plex.svg
@@ -280,7 +333,7 @@ data:
           cpu: true
           memory: true
           showLabel: true
-          label: "cluster"
+          label: "zeroenet-cluster"
         nodes:
           show: true
           cpu: true

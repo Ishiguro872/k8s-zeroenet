@@ -28,7 +28,7 @@ spec:
           imagePullPolicy: Always
           envFrom:
             - secretRef:
-                name: homepage-env-secrets
+                name: bw-homepage-secret
           ports:
             - name: http
               containerPort: 3000
