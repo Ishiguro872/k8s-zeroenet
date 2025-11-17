@@ -30,6 +30,7 @@
 *.local.yaml
 *.dev.yaml
 *.override.yaml
+**/_manifest.yaml
 
 # ============================================================
 # 🪣 Helm build outputs and chart packages
