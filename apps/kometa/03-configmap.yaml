@@ -1,0 +1,82 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kometa-config
+  namespace: kometa
+data:
+  config.yml: |
+    libraries:
+      Movies:
+        operations:
+          mass_poster_update:
+            source: tmdb
+          mass_background_update:
+            source: tmdb
+        collection_files:
+          - default: genre
+          - default: streaming
+      TV Shows:
+        operations:
+          mass_poster_update:
+            source: tmdb
+            seasons: false
+            episodes: false
+          mass_background_update:
+            source: tmdb
+            seasons: false
+            episodes: false
+    settings:
+      run_order:
+      - operations
+      - metadata
+      - collections
+      - overlays
+      cache: true
+      cache_expiration: 60
+      asset_directory: config/assets
+      asset_folders: true
+      asset_depth: 0
+      create_asset_folders: false
+      prioritize_assets: false
+      dimensional_asset_rename: false
+      download_url_assets: false
+      show_missing_season_assets: false
+      show_missing_episode_assets: false
+      show_asset_not_needed: true
+      sync_mode: append
+      minimum_items: 1
+      default_collection_order:
+      delete_below_minimum: true
+      delete_not_scheduled: false
+      run_again_delay: 2
+      missing_only_released: false
+      only_filter_missing: false
+      show_unmanaged: true
+      show_unconfigured: true
+      show_filtered: false
+      show_options: true
+      show_missing: true
+      show_missing_assets: true
+      save_report: false
+      tvdb_language: eng
+      ignore_ids:
+      ignore_imdb_ids:
+      item_refresh_delay: 0
+      playlist_sync_to_users: all
+      playlist_exclude_users:
+      playlist_report: false
+      verify_ssl: true
+      custom_repo:
+      overlay_artwork_filetype: jpg
+      overlay_artwork_quality: 75
+    plex:
+      url: <<PLEXURL>>
+      token: <<PLEXTOKEN>>
+      timeout: 60
+      db_cache: 
+      clean_bundles: false
+      empty_trash: false
+      optimize: false
+    tmdb:
+      apikey: <<TMDBKEY>>
+      language: en
