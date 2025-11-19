@@ -284,14 +284,14 @@ data:
                 type: plex
                 url: "{{HOMEPAGE_VAR_PLEX_URL}}"
                 key: "{{HOMEPAGE_VAR_PLEX_APIKEY}}"
-        - Overseerr:
-            icon: overseerr.svg
-            href: "{{HOMEPAGE_VAR_OVERSEERR_INTERNAL_URL}}"
-            description: Requests-CF
+        - Seerr:
+            icon: jellyseerr.svg
+            href: "{{HOMEPAGE_VAR_SEERR_URL}}"
+            description: Media requests
             widget:
-                type: overseerr
-                url: "{{HOMEPAGE_VAR_OVERSEERR_LOCAL_URL}}"
-                key: "{{HOMEPAGE_VAR_OVERSEERR_APIKEY}}"
+                type: jellyseerr
+                url: "{{HOMEPAGE_VAR_SEERR_URL}}"
+                key: "{{HOMEPAGE_VAR_SEERR_APIKEY}}"
         - qBittorrent:
             icon: qbittorrent.svg
             href: https://mailman.zeroenet.cloud
