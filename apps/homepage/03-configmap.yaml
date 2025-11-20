@@ -8,6 +8,7 @@ metadata:
 data:
   kubernetes.yaml: |
     mode: cluster
+    gateway: true
 #  settings.yaml: ""
   settings.yaml: |
     title: The ZeroeNet
@@ -57,27 +58,12 @@ data:
       Bookmarks:
         header: true
         style: row
-        columns: 3  
+        columns: 4  
 
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
-    - Developer & Infrastructure:
-        - The Box:
-          - icon: synology.svg
-            href: https://thebox.zeroenet.cloud
-        - Nessus:
-          - abbr: NSS
-            href: https://nessus.zeroenet.cloud
-        - Splunk:
-          - icon: splunk.svg
-            href: https://splunk.zeroenet.cloud
-        - AbuseIPDB:
-          - abbr: ADB
-            href: https://abuseipdb.com
-        - n8n:
-          - icon: n8n.svg
-            href: https://automate.zeroenet.cloud
+    - Tooling:
         - Github:
           - icon: github.svg
             href: https://github.com/dashboard
@@ -93,6 +79,34 @@ data:
         - Cloudflare:
           - icon: cloudflare.svg
             href: https://cloudflare.com
+        - AbuseIPDB:
+          - abbr: ADB
+            href: https://abuseipdb.com
+    - Infrastructure:
+        - The Box:
+          - icon: synology.svg
+            href: https://thebox.zeroenet.cloud
+        - Harper PVE:
+          - icon: proxmox.svg
+            href: https://100.110.118.42:8006
+        - ZeroeLab:
+          - icon: proxmox.svg
+            href: https://100.100.227.38:8006
+        - Harper Uptime:
+          - icon: uptime-kuma.svg
+            href: http://100.76.49.84:3001
+        - Arknet Uptime:
+          - icon: uptime-kuma.svg
+            href: http://100.87.176.65:3001
+        - Nessus:
+          - abbr: NSS
+            href: https://nessus.zeroenet.cloud
+        - Splunk:
+          - icon: splunk.svg
+            href: https://splunk.zeroenet.cloud
+        - n8n:
+          - icon: n8n.svg
+            href: https://automate.zeroenet.cloud
     - Services:
         - Wiki:
           - icon: wikijs.svg
@@ -233,6 +247,8 @@ data:
             icon: uptime-kuma.svg
             href: https://status.zeroenet.cloud
             description: Primary Uptime Monitor
+            namespace: uptimekuma
+            app: uptime-kuma
             widget:
                 type: uptimekuma
                 url: https://status.zeroenet.cloud
@@ -288,6 +304,8 @@ data:
             icon: jellyseerr.svg
             href: "{{HOMEPAGE_VAR_SEERR_URL}}"
             description: Media requests
+            namespace: seerr
+            app: seerr-chart
             widget:
                 type: jellyseerr
                 url: "{{HOMEPAGE_VAR_SEERR_URL}}"
