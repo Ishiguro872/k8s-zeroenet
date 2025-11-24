@@ -220,7 +220,18 @@ data:
                 type: npm
                 url: https://proxy.zeroenet.cloud
                 username: "{{HOMEPAGE_VAR_NGINXPM_USER}}"
-                password: "{{HOMEPAGE_VAR_NGINXPM_APIKEY}}"    
+                password: "{{HOMEPAGE_VAR_NGINXPM_APIKEY}}" 
+        - Traefik:
+            icon: traefik-proxy.svg
+            href: https://traefik.zeroenet.cloud
+            description: kubernetes gateway
+            namespace: traefik
+            app: traefik
+            widget:
+                type: traefik
+                url: https://traefik.zeroenet.cloud
+                username: "{{HOMEPAGE_VAR_TRAEFIK_USER}}"
+                password: "{{HOMEPAGE_VAR_TRAEFIK_PASSWORD}}"
 
     - DNS:
         - PiHole:
