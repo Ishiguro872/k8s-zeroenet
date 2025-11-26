@@ -37,10 +37,8 @@ extraObjects:
     kind: Secret
     metadata:
       name: dashboard-auth-secret
-    type: kubernetes.io/basic-auth
-    stringData:
-      username: admin                     # CHANGE THIS
-      password: "SomeRandomPassword"      # Replace with an Actual Password
+    data:
+      users: efmkkmdkfae= # create string using htpasswd -nb user password | openssl base64
   - apiVersion: traefik.io/v1alpha1
     kind: Middleware
     metadata:
