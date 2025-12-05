@@ -101,9 +101,6 @@ data:
         - Nessus:
           - abbr: NSS
             href: https://nessus.zeroenet.cloud
-        - Splunk:
-          - icon: splunk.svg
-            href: https://splunk.zeroenet.cloud
         - n8n:
           - icon: n8n.svg
             href: https://automate.zeroenet.cloud
@@ -120,9 +117,6 @@ data:
         - Tandoor:
           - icon: tandoor-recipes.svg
             href: https://recipes.zeroenet.cloud
-        - Actual:
-          - icon: actual-budget.svg
-            href: https://budget.zeroenet.cloud
         - ErsatzTV:
           - icon: ersatztv.png
             href: https://iptv.zeroenet.cloud
