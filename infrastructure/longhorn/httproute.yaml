@@ -14,6 +14,17 @@ spec:
         - path:
             type: PathPrefix
             value: /
+      filters:
+      - type: ExtensionRef
+        extensionRef:  # Headers Middleware Definition
+          group: traefik.io
+          kind: Middleware
+          name: secure-headers
+      - type: ExtensionRef 
+        extensionRef: # IP AllowList Middleware Definition
+          group: traefik.io
+          kind: Middleware
+          name: admin-ip-allowlist
       backendRefs:
         - name: longhorn-frontend
           port: 80
