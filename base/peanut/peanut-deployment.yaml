@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -v convert
+    kompose.version: 1.37.0 (HEAD)
+  labels:
+    io.kompose.service: peanut
+    app.kubernetes.io/name: peanut
+  name: peanut
+  namespace: peanut
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: peanut
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -v convert
+        kompose.version: 1.37.0 (HEAD)
+      labels:
+        io.kompose.service: peanut
+        app.kubernetes.io/name: peanut
+    spec:
+      containers:
+        - env:
+            - name: WEB_PORT
+              value: "8080"
+          image: brandawg93/peanut:latest
+          name: peanut
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /config
+              name: peanut-claim0
+      restartPolicy: Always
+      volumes:
+        - name: peanut-claim0
+          persistentVolumeClaim:
+            claimName: peanut-claim0
