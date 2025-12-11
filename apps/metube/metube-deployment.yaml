@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -v convert
+    kompose.version: 1.37.0 (HEAD)
+  labels:
+    io.kompose.service: metube
+  name: metube
+  namespace: metube
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: metube
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -v convert
+        kompose.version: 1.37.0 (HEAD)
+      labels:
+        io.kompose.service: metube
+    spec:
+      containers:
+        - image: ghcr.io/alexta69/metube
+          name: metube
+          ports:
+            - containerPort: 8081
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /downloads
+              name: metube-claim0
+      restartPolicy: Always
+      volumes:
+        - name: metube-claim0
+          persistentVolumeClaim:
+            claimName: metube-claim0
