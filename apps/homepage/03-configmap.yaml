@@ -11,6 +11,11 @@ data:
     gateway: true
 #  settings.yaml: ""
   settings.yaml: |
+    providers:
+      longhorn:
+        username: "{{HOMEPAGE_VAR_TRAEFIK_USER}}"
+        password: "{{HOMEPAGE_VAR_TRAEFIK_PASSWORD}}"
+        url: https://longhorn.zeroenet.cloud
     title: The ZeroeNet
     theme: dark
     color: slate
@@ -270,6 +275,8 @@ data:
             icon: peanut.svg
             href: https://peanut.zeroenet.cloud
             description: UPS monitor
+            namespace: peanut
+            app: peanut
             widget:
                 type: customapi
                 url: https://peanut.zeroenet.cloud/api/v1/devices/ups
@@ -366,9 +373,15 @@ data:
         backend: resources
         expanded: true
         network: default
-    - search:
-        provider: google
-        target: _blank
+    - longhorn:
+        href: https://longhorn.zeroenet.cloud
+        expanded: true
+        total: true
+        labels: true
+        nodes: true
+    # - search:
+    #     provider: google
+    #     target: _blank
     - datetime:
         text_size: xl
         format:
