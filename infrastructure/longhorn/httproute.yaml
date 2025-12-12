@@ -25,6 +25,11 @@ spec:
           group: traefik.io
           kind: Middleware
           name: admin-ip-allowlist
+      - type: ExtensionRef
+        extensionRef:
+          group: traefik.io
+          kind: Middleware
+          name: dashboard-auth
       backendRefs:
         - name: longhorn-frontend
           port: 80
