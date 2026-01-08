@@ -48,6 +48,10 @@ data:
         header: true
         style: row
         columns: 3
+      Authentication:
+        header: true
+        style: row
+        columns: 1
       Storage:
         header: true
         style: row
@@ -122,6 +126,9 @@ data:
         - Tandoor:
           - icon: tandoor-recipes.svg
             href: https://recipes.zeroenet.cloud
+        - Printer:
+          - abbr: PRNT
+            href: https://10.29.29.200
         - ErsatzTV:
           - icon: ersatztv.png
             href: https://iptv.zeroenet.cloud
@@ -302,6 +309,17 @@ data:
                         to: Low Battery
                       - any: true
                         to: Unknown
+
+    - Authentication:
+        - Authentik:
+            icon: authentik.svg
+            href: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
+            description: SSO for user apps
+            widget:
+                type: authentik
+                url: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
+                key: "{{HOMEPAGE_VAR_AUTHENTIK_TOKEN}}"
+                version: 2
 
     - Media:
         - Home-Plex:
