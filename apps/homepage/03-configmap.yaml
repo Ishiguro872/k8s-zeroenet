@@ -141,7 +141,10 @@ data:
             href: https://music.youtube.com
         - Amazon:
           - icon: amazon.svg
-            href: https://amazon.com    
+            href: https://amazon.com
+        - Petco:
+          - abbr: PTCO
+            href: https://petco.com    
   services.yaml: |
     - Hypervisor:
         - Frostmourne::
