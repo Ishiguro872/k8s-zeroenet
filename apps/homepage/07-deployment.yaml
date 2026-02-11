@@ -17,8 +17,6 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: homepage
-      annotations:
-        configmap-hash: "{{ include (print $.Template.BasePath \"03-configmap.yaml\") . | sha256sum }}"
     spec:
       serviceAccountName: homepage
       automountServiceAccountToken: true
