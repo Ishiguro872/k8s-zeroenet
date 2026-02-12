@@ -33,9 +33,6 @@
     - Arknet Uptime:
       - icon: uptime-kuma.svg
         href: http://100.87.176.65:3001
-    - Nessus:
-      - abbr: NSS
-        href: https://nessus.zeroenet.cloud
     - n8n:
       - icon: n8n.svg
         href: https://automate.zeroenet.cloud
