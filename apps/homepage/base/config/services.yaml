@@ -177,7 +177,7 @@
             version: 2
 - CI/CD:
     - Argo CD:
-        icon: argocd.svg
+        icon: argo-cd.svg
         href: "{{HOMEPAGE_VAR_ARGOCD_URL}}"
         description: automate k8s app deployment
         widget:
