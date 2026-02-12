@@ -175,6 +175,15 @@
             url: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
             key: "{{HOMEPAGE_VAR_AUTHENTIK_TOKEN}}"
             version: 2
+- CI/CD:
+    - Argo CD:
+        icon: argocd.svg
+        href: "{{HOMEPAGE_VAR_ARGOCD_URL}}"
+        description: automate k8s app deployment
+        widget:
+            type: argocd
+            url: "{{HOMEPAGE_VAR_ARGOCD_URL}}"
+            key: "{{HOMEPAGE_VAR_ARGOCD_TOKEN}}"
 
 - Media:
     - Home-Plex:

@@ -39,6 +39,10 @@ layout:
     header: true
     style: row
     columns: 1
+  CI/CD:
+    header: true
+    style: row
+    columns: 1
   Storage:
     header: true
     style: row
