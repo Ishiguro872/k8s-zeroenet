@@ -6,7 +6,6 @@ namespace: homepage
 resources:
   - namespace.yaml
   - serviceaccount.yaml
-  - secret.yaml
   - bitwardensecret.yaml
   - clusterrole_clusterrolebinding.yaml
   - service.yaml
