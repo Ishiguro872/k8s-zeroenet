@@ -1,0 +1,57 @@
+providers:
+  longhorn:
+    username: "{{HOMEPAGE_VAR_TRAEFIK_USER}}"
+    password: "{{HOMEPAGE_VAR_TRAEFIK_PASSWORD}}"
+    url: https://longhorn.zeroenet.cloud
+title: The ZeroeNet
+theme: dark
+color: slate
+background:
+  image:  https://images.unsplash.com/photo-1722542251482-c08511075bab?q=80&w=5142&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+  brightness: 60 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+  opacity: 30 # 0-100
+
+useEqualHeights: true
+
+layout:
+  Hypervisor:
+    header: true
+    style: row
+    columns: 1
+  Shalamayne:
+    header: true
+    style: row
+    columns: 3
+  Network:
+    header: true
+    style: row
+    columns: 1
+  DNS:
+    header: true
+    style: row
+    columns: 1
+  Monitors:
+    header: true
+    style: row
+    columns: 3
+  Authentication:
+    header: true
+    style: row
+    columns: 1
+  Storage:
+    header: true
+    style: row
+    columns: 1
+  Media:
+    header: true
+    style: row
+    columns: 3
+  Runners:
+    header: true
+    style: row
+    columns: 3
+  Bookmarks:
+    header: true
+    style: row
+    columns: 4  

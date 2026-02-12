@@ -1,0 +1,70 @@
+- Tooling:
+    - Github:
+      - icon: github.svg
+        href: https://github.com/dashboard
+    - Amazon Web Services:
+      - icon: aws.svg
+        href: https://aws.amazon.com
+    - Proxmox Helper Scripts:
+      - icon: helper-scripts.png
+        href: https://community-scripts.github.io/ProxmoxVE/
+    - NordVPN:
+      - icon: nordvpn.svg
+        href: https://nordvpn.com
+    - Cloudflare:
+      - icon: cloudflare.svg
+        href: https://cloudflare.com
+    - AbuseIPDB:
+      - abbr: ADB
+        href: https://abuseipdb.com
+- Infrastructure:
+    - The Box:
+      - icon: synology.svg
+        href: https://thebox.zeroenet.cloud
+    - Harper PVE:
+      - icon: proxmox.svg
+        href: https://100.110.118.42:8006
+    - ZeroeLab:
+      - icon: proxmox.svg
+        href: https://100.100.227.38:8006
+    - Harper Uptime:
+      - icon: uptime-kuma.svg
+        href: http://100.76.49.84:3001
+    - Arknet Uptime:
+      - icon: uptime-kuma.svg
+        href: http://100.87.176.65:3001
+    - Nessus:
+      - abbr: NSS
+        href: https://nessus.zeroenet.cloud
+    - n8n:
+      - icon: n8n.svg
+        href: https://automate.zeroenet.cloud
+- Services:
+    - Wiki:
+      - icon: wikijs.svg
+        href: https://wiki.zeroenet.cloud
+    - Karakeep:
+      - icon: karakeep.svg
+        href: https://bookmarks.zeroenet.cloud
+    - LubeLogger:
+      - icon: lubelogger.png
+        href: https://cars.zeroenet.cloud
+    - Tandoor:
+      - icon: tandoor-recipes.svg
+        href: https://recipes.zeroenet.cloud
+    - Printer:
+      - abbr: PRNT
+        href: https://10.29.29.200
+    - ErsatzTV:
+      - icon: ersatztv.png
+        href: https://iptv.zeroenet.cloud
+- Shopping & Entertainment:
+    - YouTube:
+      - icon: youtube.svg
+        href: https://youtube.com/
+    - Youtube Music:
+      - icon: youtube-music.svg
+        href: https://music.youtube.com
+    - Amazon:
+      - icon: amazon.svg
+        href: https://amazon.com
