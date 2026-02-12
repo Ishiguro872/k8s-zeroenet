@@ -68,3 +68,6 @@
     - Amazon:
       - icon: amazon.svg
         href: https://amazon.com
+    - Petco:
+      - abbr: PTCO
+        href: https://petco.com
