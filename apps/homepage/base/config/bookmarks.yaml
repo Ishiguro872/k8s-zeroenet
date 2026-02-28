@@ -46,6 +46,9 @@
     - LubeLogger:
       - icon: lubelogger.png
         href: https://cars.zeroenet.cloud
+    - ListMonk:
+      - icon: listmonk.svc
+        href: https://listmonk.zeroenet.cloud
     - Tandoor:
       - icon: tandoor-recipes.svg
         href: https://recipes.zeroenet.cloud
@@ -55,13 +58,16 @@
     - ErsatzTV:
       - icon: ersatztv.png
         href: https://iptv.zeroenet.cloud
-- Shopping & Entertainment:
+- Public Web:
     - YouTube:
       - icon: youtube.svg
         href: https://youtube.com/
     - Youtube Music:
       - icon: youtube-music.svg
         href: https://music.youtube.com
+    - Adobe Sites:
+      - icon: adobe.svg
+        href: https://portfolio.adobe.com
     - Amazon:
       - icon: amazon.svg
         href: https://amazon.com
