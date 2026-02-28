@@ -47,7 +47,7 @@
       - icon: lubelogger.png
         href: https://cars.zeroenet.cloud
     - ListMonk:
-      - icon: listmonk.svc
+      - icon: listmonk.svg
         href: https://listmonk.zeroenet.cloud
     - Tandoor:
       - icon: tandoor-recipes.svg
