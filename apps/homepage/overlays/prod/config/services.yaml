@@ -71,14 +71,14 @@
             type: uptimekuma
             url: https://status.zeroenet.cloud
             slug: uptime-zeroenet
-    - Overwatch:
-        icon: uptime-kuma.svg
-        href: https://overwatch.zeroenet.cloud
-        description: Backup Uptime Monitor
-        widget:
-            type: uptimekuma
-            url: https://overwatch.zeroenet.cloud
-            slug: overwatch-zeroenet
+    # - Overwatch:
+    #     icon: uptime-kuma.svg
+    #     href: https://overwatch.zeroenet.cloud
+    #     description: Backup Uptime Monitor
+    #     widget:
+    #         type: uptimekuma
+    #         url: https://overwatch.zeroenet.cloud
+    #         slug: overwatch-zeroenet
     - PeaNUT:
         icon: peanut.svg
         href: https://peanut.zeroenet.cloud
