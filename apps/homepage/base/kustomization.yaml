@@ -9,10 +9,12 @@ resources:
   - clusterrole_clusterrolebinding.yaml
   - service.yaml
   - deployment.yaml
-  - httproute.yaml
+  - secret.yaml
+  - bitwardensecret.yaml
 
 configMapGenerator:
   - name: homepage
+    namespace: homepage
     files:
       - config/custom.js
       - config/custom.css
