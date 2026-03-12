@@ -54,6 +54,8 @@
         icon: pi-hole.svg
         href: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL_ADMIN}}"
         description: Backup DNS
+        namespace: pihole
+        app: pihole
         widget:
             type: pihole
             url:  "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL}}"
