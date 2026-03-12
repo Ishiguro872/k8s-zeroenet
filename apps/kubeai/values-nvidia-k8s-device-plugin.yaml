@@ -1,0 +1,69 @@
+resourceProfiles:
+  nvidia-gpu-rtx3060ti-8gb:
+    nodeSelector:
+      nvidia.com/gpu: "1"
+  nvidia-gpu-a16:
+    nodeSelector:
+      nvidia.com/gpu.family: "ampere"
+      nvidia.com/gpu.memory: "16384"
+  nvidia-gpu-l4:
+    nodeSelector:
+      nvidia.com/gpu.family: "ada-lovelace"
+      nvidia.com/gpu.memory: "23034"
+  nvidia-gpu-h100:
+    nodeSelector:
+      nvidia.com/gpu.family: "hopper"
+      nvidia.com/gpu.memory: "81920"
+  nvidia-gpu-gh200:
+    nodeSelector:
+      nvidia.com/gpu.family: "hopper"
+      nvidia.com/gpu.memory: "97871"
+  nvidia-gpu-a100-80gb:
+    nodeSelector:
+      nvidia.com/gpu.family: "ampere"
+      nvidia.com/gpu.memory: "81920"
+  nvidia-gpu-a100-40gb:
+    nodeSelector:
+      nvidia.com/gpu.family: "ampere"
+      nvidia.com/gpu.memory: "40960"
+  nvidia-gpu-rtx4070-8gb:
+    nodeSelector:
+      nvidia.com/gpu.family: "ampere"
+      nvidia.com/gpu.memory: "8188"
+  nvidia-gpu-rtx4090-24gb:
+    nodeSelector:
+      nvidia.com/gpu.family: "ampere"
+      nvidia.com/gpu.memory: "24564"
+
+open-webui:
+  image:
+    tag: "v0.8.10"
+  extraEnvVars:
+  - name: OAUTH_CLIENT_ID
+    valueFrom:
+      secretKeyRef:
+        name: bw-open-webui-secret
+        key: client-id
+  - name: OAUTH_CLIENT_SECRET
+    valueFrom:
+      secretKeyRef:
+        name: bw-open-webui-secret
+        key: client-secret
+  - name: WEBUI_AUTH
+    value: "True"
+  - name: OPENAI_API_KEYS
+    value: "not-used"
+  - name: OAUTH_PROVIDER_NAME
+    value: authentik
+  - name: OPENID_PROVIDER_URL
+    value: https://authentik.zeroenet.cloud/application/o/open-webui/.well-known/openid-configuration
+  - name: OPENID_REDIRECT_URI
+    value: https://ai.zeroenet.cloud/oauth/oidc/callback
+  - name: WEBUI_URL
+    value: https://ai.zeroenet.cloud
+  - name: ENABLE_OAUTH_SIGNUP
+    value: "true"
+  - name: ENABLE_LOGIN_FORM
+    value: "false"
+  - name: OAUTH_MERGE_ACCOUNTS_BY_EMAIL
+    value: "true"
