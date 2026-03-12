@@ -17,8 +17,8 @@
         widget:
             type: unifi
             url: https://10.28.28.1
-            username:  "{{HOMEPAGE_VAR_UNIFI_USER}}"
-            password:  "{{HOMEPAGE_VAR_UNIFI_APIKEY}}"
+            username: "{{HOMEPAGE_VAR_UNIFI_USER}}"
+            password: "{{HOMEPAGE_VAR_UNIFI_APIKEY}}"
     - Nginx Proxy Manager:
         icon: nginx-proxy-manager.svg
         href: https://proxy.zeroenet.cloud
@@ -71,14 +71,6 @@
             type: uptimekuma
             url: https://status.zeroenet.cloud
             slug: uptime-zeroenet
-    # - Overwatch:
-    #     icon: uptime-kuma.svg
-    #     href: https://overwatch.zeroenet.cloud
-    #     description: Backup Uptime Monitor
-    #     widget:
-    #         type: uptimekuma
-    #         url: https://overwatch.zeroenet.cloud
-    #         slug: overwatch-zeroenet
     - PeaNUT:
         icon: peanut.svg
         href: https://peanut.zeroenet.cloud
