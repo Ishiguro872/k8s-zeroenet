@@ -1,5 +1,5 @@
 - Hypervisor:
-    - Frostmourne::
+    - Frostmourne:
         icon: proxmox.svg
         href: "{{HOMEPAGE_VAR_FROSTMOURNE_URL}}"
         description: Proxmox-UniqueSSL
