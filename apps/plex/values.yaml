@@ -1,0 +1,88 @@
+image:
+  tag: "latest"
+  pullPolicy: Always
+
+# ── HTTPRoute ─────────────────────────────────────────────────────────────────
+httpRoute:
+  enabled: true
+  parentRefs:
+    - name: traefik-gateway
+      namespace: traefik
+  hostnames:
+    - plex.zeroenet.cloud
+  annotations: {}
+
+ingress:
+  enabled: false
+
+# ── PMS core ─────────────────────────────────────────────────────────────────
+pms:
+  # Using static local PV on talos-wkr-4's SSD — see config-plex.yaml
+  configExistingClaim: plex-config-pvc
+
+  # NVIDIA hardware transcoding (requires Plex Pass)
+  gpu:
+    nvidia:
+      enabled: true
+      devices: "all"
+      capabilities: "compute,video,utility"
+
+  # resources:
+  #   requests:
+  #     cpu: "2"
+  #     memory: "4Gi"
+  #   limits:
+  #     cpu: "8"
+  #     memory: "16Gi"
+
+  livenessProbe:
+    httpGet:
+      path: /identity
+      port: 32400
+    initialDelaySeconds: 60
+    periodSeconds: 60
+    timeoutSeconds: 1
+    failureThreshold: 3
+
+  readinessProbe:
+    httpGet:
+      path: /identity
+      port: 32400
+    initialDelaySeconds: 60
+    periodSeconds: 60
+    timeoutSeconds: 1
+    failureThreshold: 3
+
+# ── Pin to GPU node ───────────────────────────────────────────────────────────
+nodeSelector:
+  kubernetes.io/hostname: talos-wkr-4
+
+# ── Environment variables ─────────────────────────────────────────────────────
+extraEnv:
+  # Remove PLEX_CLAIM after first successful startup
+  PLEX_CLAIM: ""  # ← replace before installing
+  ADVERTISE_IP: "https://plex.zeroenet.cloud"
+  TZ: "America/Los_Angeles"            # ← replace with your timezone
+
+# ── Media (NFS) + transcode (RAM) ────────────────────────────────────────────
+extraVolumes:
+  - name: media
+    persistentVolumeClaim:
+      claimName: plex-media-pvc
+      readOnly: true
+
+extraVolumeMounts:
+  - name: media
+    mountPath: /data
+
+# ── Service ───────────────────────────────────────────────────────────────────
+service:
+  type: ClusterIP
+  port: 32400
+  annotations:
+    tailscale.com/expose: "true"
+    tailscale.com/hostname: "kubeflix"
+
+# ── Rclone — disabled (using NFS directly) ────────────────────────────────────
+rclone:
+  enabled: false
