@@ -130,6 +130,8 @@
         icon: plex.svg
         href: "{{HOMEPAGE_VAR_PLEX_URL}}"
         description: Plex
+        namespace: plex
+        app: plex-media-server
         widget:
             type: plex
             url: "{{HOMEPAGE_VAR_PLEX_URL}}"
