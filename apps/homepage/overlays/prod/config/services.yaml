@@ -111,7 +111,12 @@
         href: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
         description: SSO for user apps
         namespace: authentik
-        podSelector: "app.kubernetes.io/component in (server, worker)"
+        app: authentik
+        podSelector: >-
+            app.kubernetes.io/name in (
+                authentik-server,
+                authentik-worker
+            )
         widget:
             type: authentik
             url: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
@@ -123,7 +128,8 @@
         href: "{{HOMEPAGE_VAR_ARGOCD_URL}}"
         description: automate k8s app deployment
         namespace: argocd
-        app: argocd-dex-server
+        app: argocd
+        podSelector: ""
         widget:
             type: argocd
             url: "{{HOMEPAGE_VAR_ARGOCD_URL}}"
