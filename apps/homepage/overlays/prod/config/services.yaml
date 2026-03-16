@@ -112,11 +112,7 @@
         description: SSO for user apps
         namespace: authentik
         app: authentik
-        podSelector: >-
-            app.kubernetes.io/name in (
-                authentik-server,
-                authentik-worker
-            )
+        podSelector: "app.kubernetes.io/name=authentik"
         widget:
             type: authentik
             url: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
