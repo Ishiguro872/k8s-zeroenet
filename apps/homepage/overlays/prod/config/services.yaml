@@ -122,6 +122,8 @@
         icon: argo-cd.svg
         href: "{{HOMEPAGE_VAR_ARGOCD_URL}}"
         description: automate k8s app deployment
+        namespace: argocd
+        podSelector: ""
         widget:
             type: argocd
             url: "{{HOMEPAGE_VAR_ARGOCD_URL}}"
