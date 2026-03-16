@@ -111,7 +111,7 @@
         href: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
         description: SSO for user apps
         namespace: authentik
-        podSelector: ""
+        podSelector: "app.kubernetes.io/component in (server, worker)"
         widget:
             type: authentik
             url: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
