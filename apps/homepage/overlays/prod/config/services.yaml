@@ -132,7 +132,7 @@
             key: "{{HOMEPAGE_VAR_ARGOCD_TOKEN}}"
 
 - Media:
-    - Home-Plex:
+    - Kubeflix-Plex:
         icon: plex.svg
         href: "{{HOMEPAGE_VAR_PLEX_URL}}"
         description: Plex
