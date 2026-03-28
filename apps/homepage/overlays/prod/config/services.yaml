@@ -54,8 +54,6 @@
         icon: pi-hole.svg
         href: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL_ADMIN}}"
         description: Backup DNS
-        namespace: pihole
-        app: pihole
         widget:
             type: pihole
             url:  "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL}}"
@@ -132,12 +130,10 @@
             key: "{{HOMEPAGE_VAR_ARGOCD_TOKEN}}"
 
 - Media:
-    - Kubeflix-Plex:
+    - Zeroeflix-Plex:
         icon: plex.svg
         href: "{{HOMEPAGE_VAR_PLEX_URL}}"
         description: Plex
-        namespace: plex
-        app: plex-media-server
         widget:
             type: plex
             url: "{{HOMEPAGE_VAR_PLEX_URL}}"
