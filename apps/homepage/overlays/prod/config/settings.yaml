@@ -19,6 +19,10 @@ layout:
     header: true
     style: row
     columns: 1
+  Shalamayne:
+    header: true
+    style: row
+    columns: 3
   Network:
     header: true
     style: row
