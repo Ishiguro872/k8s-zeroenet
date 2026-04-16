@@ -35,7 +35,7 @@
         href: http://100.87.176.65:3001
     - n8n:
       - icon: n8n.svg
-        href: https://automate.zeroenet.cloud
+        href: https://n8n.zeroenet.cloud
 - Services:
     - Wiki:
       - icon: wikijs.svg
