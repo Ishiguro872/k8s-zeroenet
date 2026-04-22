@@ -59,6 +59,9 @@
       - icon: ersatztv.png
         href: https://iptv.zeroenet.cloud
 - Public Web:
+    - AME Minicross:
+      - abbr: AME
+        href: https://ameminicross.com/
     - YouTube:
       - icon: youtube.svg
         href: https://youtube.com/
