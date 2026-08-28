@@ -9,69 +9,69 @@
             username: "{{HOMEPAGE_VAR_FROSTMOURNE_USER}}"
             password: "{{HOMEPAGE_VAR_FROSTMOURNE_APIKEY}}"
 
-- Shalamayne:
-#    - Info:
-#        widget:
-#            type: glances
-#            url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
-#            username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}"
-#            password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}"
-#            version: 4
-#            metric: info
-    - CPU Usage:
-        widget:
-            type: glances
-            url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
-            username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
-            password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
-            version: 4 # required only if running glances v4 or higher, defaults to 3
-            metric: cpu
-            refreshInterval: 5000 # optional - in milliseconds, defaults to 1000 or more, depending on the metric
-            pointsLimit: 15 # optional, defaults to 15
-            chart: false
-    - GPU Usage:
-        widget:
-            type: glances
-            url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
-            username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
-            password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
-            version: 4
-            metric: gpu:nvidia0
-    - Memory Usage:
-        widget:
-            type: glances
-            url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
-            username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
-            password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
-            version: 4 # required only if running glances v4 or higher, defaults to 3
-            metric: memory
-            chart: false
-    -  Network Usage:
-        widget:
-            type: glances
-            url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
-            username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
-            password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
-            version: 4 # required only if running glances v4 or higher, defaults to 3
-            metric: network:enp5s0
-            chart: false
-    - Top Processes:
-        widget:
-            type: glances
-            url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
-            username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
-            password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
-            version: 4 # required only if running glances v4 or higher, defaults to 3
-            metric: process
-    - Disk I/O:
-        widget:
-            type: glances
-            url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
-            username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
-            password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
-            version: 4 # required only if running glances v4 or higher, defaults to 3
-            metric: disk:nvme0n1
-            chart: false
+# - Shalamayne:
+# #    - Info:
+# #        widget:
+# #            type: glances
+# #            url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+# #            username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}"
+# #            password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}"
+# #            version: 4
+# #            metric: info
+#     - CPU Usage:
+#         widget:
+#             type: glances
+#             url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+#             username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+#             password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+#             version: 4 # required only if running glances v4 or higher, defaults to 3
+#             metric: cpu
+#             refreshInterval: 5000 # optional - in milliseconds, defaults to 1000 or more, depending on the metric
+#             pointsLimit: 15 # optional, defaults to 15
+#             chart: false
+#     - GPU Usage:
+#         widget:
+#             type: glances
+#             url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+#             username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+#             password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+#             version: 4
+#             metric: gpu:nvidia0
+#     - Memory Usage:
+#         widget:
+#             type: glances
+#             url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+#             username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+#             password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+#             version: 4 # required only if running glances v4 or higher, defaults to 3
+#             metric: memory
+#             chart: false
+#     -  Network Usage:
+#         widget:
+#             type: glances
+#             url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+#             username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+#             password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+#             version: 4 # required only if running glances v4 or higher, defaults to 3
+#             metric: network:enp5s0
+#             chart: false
+#     - Top Processes:
+#         widget:
+#             type: glances
+#             url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+#             username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+#             password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+#             version: 4 # required only if running glances v4 or higher, defaults to 3
+#             metric: process
+#     - Disk I/O:
+#         widget:
+#             type: glances
+#             url: "{{HOMEPAGE_VAR_SHALAMAYNE_URL}}"
+#             username: "{{HOMEPAGE_VAR_SHALAMAYNE_USER}}" # optional if auth enabled in Glances
+#             password: "{{HOMEPAGE_VAR_SHALAMAYNE_APIKEY}}" # optional if auth enabled in Glances
+#             version: 4 # required only if running glances v4 or higher, defaults to 3
+#             metric: disk:nvme0n1
+#             chart: false
 
 - Network:
     - UniFi:
@@ -114,15 +114,15 @@
             url: "{{HOMEPAGE_VAR_PIHOLE_URL}}"
             version: 6 # required if running v6 or higher, defaults to 5
             key: "{{HOMEPAGE_VAR_PIHOLE_APIKEY}}" # optional, in v6 can be your password or app password
-    - Backup-PiHole:
-        icon: pi-hole.svg
-        href: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL_ADMIN}}"
-        description: Backup DNS
-        widget:
-            type: pihole
-            url:  "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL}}"
-            version: 6
-            key: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_APIKEY}}"
+    # - Backup-PiHole:
+    #     icon: pi-hole.svg
+    #     href: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL_ADMIN}}"
+    #     description: Backup DNS
+    #     widget:
+    #         type: pihole
+    #         url:  "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL}}"
+    #         version: 6
+    #         key: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_APIKEY}}"
 
 - Monitors:
     - Status:
@@ -144,6 +144,8 @@
         widget:
             type: customapi
             url: https://peanut.zeroenet.cloud/api/v1/devices/ups
+            username: {{HOMEPAGE_VAR_PEANUT_USER}}
+            password: {{HOMEPAGE_VAR_PEANUT_PASSWORD}}
             mappings:
               - field: battery.charge
                 label: Battery Charge
