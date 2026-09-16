@@ -114,15 +114,15 @@
             url: "{{HOMEPAGE_VAR_PIHOLE_URL}}"
             version: 6 # required if running v6 or higher, defaults to 5
             key: "{{HOMEPAGE_VAR_PIHOLE_APIKEY}}" # optional, in v6 can be your password or app password
-    # - Backup-PiHole:
-    #     icon: pi-hole.svg
-    #     href: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL_ADMIN}}"
-    #     description: Backup DNS
-    #     widget:
-    #         type: pihole
-    #         url:  "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL}}"
-    #         version: 6
-    #         key: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_APIKEY}}"
+    - Backup-PiHole:
+        icon: pi-hole.svg
+        href: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL_ADMIN}}"
+        description: Backup DNS
+        widget:
+            type: pihole
+            url:  "{{HOMEPAGE_VAR_BACKUP_PIHOLE_URL}}"
+            version: 6
+            key: "{{HOMEPAGE_VAR_BACKUP_PIHOLE_APIKEY}}"
 
 - Monitors:
     - Status:
