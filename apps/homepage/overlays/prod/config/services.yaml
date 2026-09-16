@@ -10,14 +10,14 @@
             password: "{{HOMEPAGE_VAR_FROSTMOURNE_APIKEY}}"
 
 - The Helm:
- #    - Info:
- #        widget:
- #            type: glances
- #            url: "{{HOMEPAGE_VAR_THEHELM_URL}}"
- #            username: "{{HOMEPAGE_VAR_THEHELM_USER}}"
- #            password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}"
- #            version: 4
- #            metric: info
+     - Info:
+         widget:
+             type: glances
+             url: "{{HOMEPAGE_VAR_THEHELM_URL}}"
+             username: "{{HOMEPAGE_VAR_THEHELM_USER}}"
+             password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}"
+             version: 4
+             metric: info
      - CPU Usage:
          widget:
              type: glances
