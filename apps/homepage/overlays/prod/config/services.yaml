@@ -70,7 +70,7 @@
              username: "{{HOMEPAGE_VAR_THEHELM_USER}}" # optional if auth enabled in Glances
              password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}" # optional if auth enabled in Glances
              version: 4 # required only if running glances v4 or higher, defaults to 3
-             metric: disk:mmcblk0
+             metric: disk:sda
              chart: false
 
 - Network:
