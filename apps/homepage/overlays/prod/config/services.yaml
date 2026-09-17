@@ -127,13 +127,13 @@
 - Monitors:
     - Status:
         icon: uptime-kuma.svg
-        href: https://status.zeroenet.cloud
+        href: https://uptime.zeroenet.cloud
         description: Primary Uptime Monitor
-        namespace: uptimekuma
-        app: uptime-kuma
+#        namespace: uptimekuma
+#        app: uptime-kuma
         widget:
             type: uptimekuma
-            url: https://status.zeroenet.cloud
+            url: https://uptime.zeroenet.cloud
             slug: uptime-zeroenet
     - PeaNUT:
         icon: peanut.svg
