@@ -36,7 +36,7 @@
              metric: cpu
              refreshInterval: 5000 # optional - in milliseconds, defaults to 1000 or more, depending on the metric
              pointsLimit: 15 # optional, defaults to 15
-             chart: false
+             chart: true
 #     - GPU Usage:
 #         widget:
 #             type: glances
@@ -53,7 +53,7 @@
              password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}" # optional if auth enabled in Glances
              version: 4 # required only if running glances v4 or higher, defaults to 3
              metric: memory
-             chart: false
+             chart: true
      -  Network Usage:
          widget:
              type: glances
@@ -62,7 +62,7 @@
              password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}" # optional if auth enabled in Glances
              version: 4 # required only if running glances v4 or higher, defaults to 3
              metric: network:eth0
-             chart: false
+             chart: true
      - Top Processes:
          widget:
              type: glances
@@ -71,15 +71,15 @@
              password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}" # optional if auth enabled in Glances
              version: 4 # required only if running glances v4 or higher, defaults to 3
              metric: process
-     - Disk I/O:
-         widget:
-             type: glances
-             url: "{{HOMEPAGE_VAR_THEHELM_URL}}"
-             username: "{{HOMEPAGE_VAR_THEHELM_USER}}" # optional if auth enabled in Glances
-             password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}" # optional if auth enabled in Glances
-             version: 4 # required only if running glances v4 or higher, defaults to 3
-             metric: disk:sda
-             chart: false
+    #  - Disk I/O:
+    #      widget:
+    #          type: glances
+    #          url: "{{HOMEPAGE_VAR_THEHELM_URL}}"
+    #          username: "{{HOMEPAGE_VAR_THEHELM_USER}}" # optional if auth enabled in Glances
+    #          password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}" # optional if auth enabled in Glances
+    #          version: 4 # required only if running glances v4 or higher, defaults to 3
+    #          metric: disk:sda
+    #          chart: false
 
 - Network:
     - UniFi:
