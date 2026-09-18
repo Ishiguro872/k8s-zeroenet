@@ -52,16 +52,13 @@
     - Tandoor:
       - icon: tandoor-recipes.svg
         href: https://recipes.zeroenet.cloud
-    - Printer:
-      - abbr: PRNT
-        href: https://10.29.29.200
     - ErsatzTV:
       - icon: ersatztv.png
         href: https://iptv.zeroenet.cloud
 - Public Web:
-    - AME Minicross:
-      - abbr: AME
-        href: https://ameminicross.com/
+    - Mini X:
+      - abbr: MINIX
+        href: https://minixracing.com
     - YouTube:
       - icon: youtube.svg
         href: https://youtube.com/
