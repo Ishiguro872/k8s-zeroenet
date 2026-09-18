@@ -18,6 +18,14 @@
              password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}"
              version: 4
              metric: info
+     -Temperature:
+         widget:
+             type: glances
+             url: "{{HOMEPAGE_VAR_THEHELM_URL}}"
+             username: "{{HOMEPAGE_VAR_THEHELM_USER}}"
+             password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}"
+             version: 4
+             metric: sensor:cpu_thermal 0         
      - CPU Usage:
          widget:
              type: glances
