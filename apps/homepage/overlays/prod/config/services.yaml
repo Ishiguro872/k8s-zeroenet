@@ -18,7 +18,7 @@
              password: "{{HOMEPAGE_VAR_THEHELM_APIKEY}}"
              version: 4
              metric: info
-     -Temperature:
+     - Temperature:
          widget:
              type: glances
              url: "{{HOMEPAGE_VAR_THEHELM_URL}}"
